@@ -11,6 +11,8 @@ function ball() {
     choices = ["penis","please try again","nah man I will not answer you","get out of my face","you are beautiful just the way you are","you are loved by OOOPS","you will be banned from this server one day","you are gay"];
     return choices[Math.floor(Math.random() * 8)];
 }
+function iN(a){return/^\d+$/.test(a);}function iO(a){return a.match('^[/*+-]{1}$')==null?!1:!0;}mC={'/':function(a,b){return a/b;},'*':function(a,b){return a*b;},'-':function(a,b){return a-b;},'+':function(a,b){return a+b;}};
+
 client.on('message', message => {
     if (message.content === 'ok google') {
         message.channel.send('Hello, Google Home is at your service.');
@@ -22,6 +24,8 @@ client.on('message', message => {
         message.reply('https://www.accuweather.com/');
       }
 });
+
+client.on("message",a=>{mV=a.content.split(" "),mV.length>=7&&"ok google what is"==a.content.slice(0,17)&&iN(mV[4])&&iO(mV[5])&&iN(mV[6])&&a.channel.send(Math.round(1e4*mC[mV[5]](parseInt(mV[4]),parseInt(mV[6])))/1e4)});
 
 client.on('message', message => {
     if (message.content === 'ok google help') {
