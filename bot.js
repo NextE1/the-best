@@ -25,16 +25,16 @@ client.on('message', message => {
 
 client.on('message', message => {
     if (message.content === 'ok google help') {
-        message.author.send("ok google when does OOOPS have a birthday?\n \
-ok google set a reminder?\n \
-ok google what is 1 + 1?\n \
-ok google can you show me the default dance?\n \
-ok google when does manbundan have his birthday?\n \
-ok google why is OOOPS so bad a krunker?\n \
-ok google gay?\n \
-ok google flip a coin\n \
-ok google twitter?\n \
-ok google ball");
+        message.author.send("ok google when does OOOPS have a birthday?\n"
+        + "ok google set a reminder?\n"
+        + "ok google what is 1 + 1?\n"
+        + "ok google can you show me the default dance?\n"
+        + "ok google when does manbundan have his birthday?\n"
+        + "ok google why is OOOPS so bad a krunker?\n"
+        + "ok google gay?\n"
+        + "ok google flip a coin\n"
+        + "ok google twitter?\n"
+        + "ok google ball");
     }
 });
 
