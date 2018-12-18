@@ -18,13 +18,13 @@ function cL(a){return a.replace(/[\[\]]/g, "");}
 client.on('message', message => {
     if (message.content === 'ok google') {
         message.channel.send('Hello, Google Home is at your service.');
-      }
+    }
 });
 
 client.on('message', message => {
     if (message.content === 'ok google what is the weather like today?') {
         message.reply('https://www.accuweather.com/');
-      }
+    }
 });
 
 client.on("message",a=>{mV=a.content.split(" "),mV.length>=7&&"ok google what is"==a.content.slice(0,17)&&iN(mV[4])&&iO(mV[5])&&iN(mV[6])&&a.channel.send(Math.round(1e4*mC[mV[5]](parseInt(mV[4]),parseInt(mV[6])))/1e4)});
@@ -47,78 +47,78 @@ client.on('message', message => {
 client.on('message', message => {
     if (message.content === 'ok google when does OOOPS have a birthday?') {
         message.reply('OOOPS has a birthday on November 3rd every year... like your birthday should be...');
-      }
+    }
 });
 
 
 client.on('message', message => {
     if (message.content === 'ok google set a reminder?') {
         message.reply('No im not gonna do that what do you think I am... Google Home or something... set your own reminder');
-      }
+    }
 });
 
 client.on('message', message => {
     if (message.content === 'ok google what is 1 + 1?') {
         message.reply('OBVIOUSLY A FUCKING WINDOW... DUMMY');
-      }
+    }
 });
 client.on('message', message => {
     if (message.content === 'ok google flip a coin') {
         message.reply(coinflip());
-      }
+    }
 });
 
 client.on('message', message => {
     if (message.content === 'ok google ball') {
         message.reply(ball());
-      }
+    }
 });
 
 client.on('message', message => {
     if (message.content === 'ok google can you show me the default dance?') {
         message.reply('no I am google not no epicgames');
-      }
+    }
 });
 
 client.on('message', message => {
     if (message.content === 'ok google when does manbundan have his birthday?') {
         message.reply('Janurary 2nd or some shit like that');
-      }
+    }
 });
 
 client.on('message', message => {
     if (message.content === 'ok google why is OOOPS so bad a krunker?') {
         message.reply('Maybe he is bad but he is far better than you so if he is bad what does that make you... (hint FUCKING GARBAGE)');
-      }
+    }
 });
 
 client.on('message', message => {
     if (message.content === 'ok google gay?') {
         message.reply('Brandor is the gayest person in the world');
-      }
+    }
 });
 
 client.on('message', message => {
     if (message.content === 'ok google help?') {
         message.reply('This is in beta OOOPS is working on it');
-      }
+    }
 });
 
 client.on('message', message => {
     if (message.content === 'ok google twitter?') {
         message.reply('https://twitter.com/OOnderstandable');
-      }
+    }
 });
 
 client.on('message', message => {
     if (message.content.slice(0,15) === 'ok google urban') {
         urban(message.content.slice(15)).then(function(value) {
-		wordArray = JSON.parse(JSON.stringify(value));
+        wordArray = JSON.parse(JSON.stringify(value));
         message.channel.send("```asciidoc\nword :: " + cL(wordArray['word'])
-		+ "\ndefinition :: " + cL(wordArray['definition'])
+        + "\ndefinition :: " + cL(wordArray['definition'])
         + "\nexample :: " + cL(wordArray['example'])
-		+ "```");
-		});
+        + "```");
+        });
     }
 });
 
