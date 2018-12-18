@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const urban = require('urban.js');
 
 client.on('ready', () => {
     console.log('Google Home!');
@@ -12,6 +13,7 @@ function ball() {
     return choices[Math.floor(Math.random() * 8)];
 }
 function iN(a){return/^\d+$/.test(a);}function iO(a){return a.match('^[/*+-]{1}$')==null?!1:!0;}mC={'/':function(a,b){return a/b;},'*':function(a,b){return a*b;},'-':function(a,b){return a-b;},'+':function(a,b){return a+b;}};
+function cL(a){return a.replace(/[\[\]]/g, "");}
 
 client.on('message', message => {
     if (message.content === 'ok google') {
@@ -107,5 +109,18 @@ client.on('message', message => {
         message.reply('https://twitter.com/OOnderstandable');
       }
 });
+
+client.on('message', message => {
+    if (message.content.slice(0,15) === 'ok google urban') {
+        urban(message.content.slice(15)).then(function(value) {
+		wordArray = JSON.parse(JSON.stringify(value));
+        message.channel.send("```asciidoc\nword :: " + cL(wordArray['word'])
+		+ "\ndefinition :: " + cL(wordArray['definition'])
+        + "\nexample :: " + cL(wordArray['example'])
+		+ "```");
+		});
+    }
+});
+
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
