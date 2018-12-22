@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const urban = require('urban.js');
 
-client.on('ready', () => {
+client.on('ready', function() => {
     console.log('Google Home!');
     client.user.setActivity('Do ok google help for commands!');
 });
