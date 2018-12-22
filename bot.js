@@ -4,6 +4,7 @@ const urban = require('urban.js');
 
 client.on('ready', () => {
     console.log('Google Home!');
+    client.user.setActivity('Do ok google help for commands!');
 });
 function coinflip() {
     return (Math.floor(Math.random() * 2) == 0) ? 'heads' : 'tails';
@@ -55,7 +56,6 @@ client.on('message', message => {
         message.reply('OOOPS has a birthday on November 3rd every year... like your birthday should be...');
     }
 });
-
 
 client.on('message', message => {
     if (tL(message.content) === 'ok google set a reminder?') {
